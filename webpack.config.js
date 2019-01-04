@@ -45,7 +45,13 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: "file-loader?name=/public/icons/[name].[ext]"
+        use: [{
+            loader: 'file-loader',
+            options: {
+                name: '[name].[ext]',
+                outputPath: 'images/'
+            }
+        }]
       },
       {
         test: /\.css$/,
