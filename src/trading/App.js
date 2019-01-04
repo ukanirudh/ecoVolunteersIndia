@@ -1,4 +1,4 @@
 import React from 'react'
-import App from './components'
+import App from './home-page'
 
 export const TradingApp = () => <App />
