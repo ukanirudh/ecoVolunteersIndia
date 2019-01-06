@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import {
   Button,
   Container,
-  Menu,
   Responsive,
   Segment,
   Visibility,
 } from 'semantic-ui-react'
+import AppHeaderDesktop from './appHeaderDesktop'
 import HomepageHeading from './homepageHeading'
 import './homePage.css'
 
@@ -34,28 +35,7 @@ export default class DesktopContainer extends Component {
             style={{ minHeight: 700, padding: '1em 0em' }}
             vertical
           >
-            <Menu
-              fixed={fixed ? 'top' : null}
-              inverted={!fixed}
-              pointing={!fixed}
-              secondary={!fixed}
-              size='large'
-            >
-              <Container>
-                <Menu.Item as='a' active>Home</Menu.Item>
-                <Menu.Item as='a'>Gallery</Menu.Item>
-                <Menu.Item as='a'>Activities</Menu.Item>
-                <Menu.Item as='a'>Volunteers</Menu.Item>
-                <Menu.Item position='right'>
-                  <Button as='a' inverted={!fixed}>
-                    Log in
-                  </Button>
-                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                    Sign Up
-                  </Button>
-                </Menu.Item>
-              </Container>
-            </Menu>
+            <AppHeaderDesktop fixed={fixed} />
             <HomepageHeading />
           </Segment>
         </Visibility>

@@ -39,6 +39,7 @@ export default class MobileContainer extends Component {
           <Menu.Item as='a'>Gallery</Menu.Item>
           <Menu.Item as='a'>Activities</Menu.Item>
           <Menu.Item as='a'>Volunteers</Menu.Item>
+          <Menu.Item as='a'>About Us</Menu.Item>
           <Menu.Item as='a'>Log in</Menu.Item>
           <Menu.Item as='a'>Sign Up</Menu.Item>
         </Sidebar>

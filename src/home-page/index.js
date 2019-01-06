@@ -1,18 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
   Button,
   Container,
   Divider,
   Grid,
   Header,
-  Icon,
   Image,
   List,
-  Menu,
   Responsive,
-  Segment,
-  Sidebar,
-  Visibility,
+  Segment
 } from 'semantic-ui-react'
 import MobileContainer from './mobileContainer'
 import DesktopContainer from './desktopContainer'
