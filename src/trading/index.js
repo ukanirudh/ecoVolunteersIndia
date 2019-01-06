@@ -1,15 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import setupStore from './store'
 import {TradingApp} from './App'
-import { Provider } from 'react-redux'
-import './trading.css'
+import { HashRouter } from "react-router-dom";
 
 const trading = () => {
   return (
-    <Provider store={setupStore()}>
+    <HashRouter>
       <TradingApp />
-    </Provider>
+    </HashRouter>
   )
 }
 
