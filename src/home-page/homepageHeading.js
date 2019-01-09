@@ -1,9 +1,10 @@
 import React from 'react'
-import { Button, Container, Header, Icon } from 'semantic-ui-react'
+import { Image, Button, Container, Header, Icon } from 'semantic-ui-react'
 import './homePage.css'
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
+    <Image src={require(`../static/images/evi.png`)} size='medium' centered />
     <Header
       as='h1'
       content='Eco Volunteers India'
@@ -11,8 +12,7 @@ const HomepageHeading = ({ mobile }) => (
       style={{
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
-        marginBottom: 0,
-        marginTop: mobile ? '1.5em' : '3em',
+        marginBottom: 0
       }}
     />
     <Header
