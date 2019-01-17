@@ -20,34 +20,36 @@ const ResponsiveContainer = ({ children }) => (
   </div>
 )
 
-const HomepageLayout = () => (
+const goToAboutUs = ({history}) => {
+  return history && history.push('/aboutus')
+}
+
+const HomepageLayout = (props) => (
   <ResponsiveContainer>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
           <Grid.Column width={8}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              We Help Companies and Companions
-            </Header>
+            <Header as='h3' style={{ fontSize: '2em' }}> We Preserve Wildlife </Header>
             <p style={{ fontSize: '1.33em' }}>
-              We can give your company superpowers to do things that they never thought possible.
-              Let us delight your customers and empower your needs... through pure data analytics.
+              Eco Volunteers India (EVI) is a Registered Trust, purely working
+              on the conservation issues across southern and central part of Karnataka.
             </p>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-              We Make Bananas That Can Dance
-            </Header>
+            <Header as='h3' style={{ fontSize: '2em' }}> We Support Conservation Ideas </Header>
             <p style={{ fontSize: '1.33em' }}>
-              Yes that's right, you thought it was the stuff of dreams, but even bananas can be
-              bioengineered.
+              The Eco Volunteers India Trust supports a wide variety of conservation projects
+              in Karnataka within the categories of wildlife management, research and education.
+              These projects address the needs of existing wildlife conflicts, seek solutions
+              to save endangered species and provide education and training to local people and their communities.
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src='/images/wireframe/white-image.png' />
+            <Image bordered rounded size='large' src={require('../static/images/homepageimg.jpg')} />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column textAlign='center'>
-            <Button size='huge'>Check Them Out</Button>
+            <Button size='huge' onClick={() => goToAboutUs(props)}>Check Them Out</Button>
           </Grid.Column>
         </Grid.Row>
       </Grid>

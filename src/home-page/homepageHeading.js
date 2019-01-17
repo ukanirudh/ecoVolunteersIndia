@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Button, Container, Header, Icon } from 'semantic-ui-react'
+import { Image, Container, Header } from 'semantic-ui-react'
 import './homePage.css'
 
 const HomepageHeading = ({ mobile }) => (
@@ -17,7 +17,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='Do whatever you want when you want to.'
+      content='Wildlife conservation || Animal Rescue || Intelligence || Forest Patrolling || Awareness || Nature camps || Crowd management || Anti snare and Anti poaching activity || Traffic management.'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
@@ -25,10 +25,10 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
-    <Button primary size='huge'>
+    {/*<Button primary size='huge'>
       Get Started
       <Icon name='right arrow' />
-    </Button>
+    </Button>*/}
   </Container>
 )
 

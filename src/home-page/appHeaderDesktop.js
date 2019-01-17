@@ -14,7 +14,7 @@ const AppHeaderDesktop = (props) => {
       className={customClassName}
     >
       <Container>
-        <Menu.Item as='a' active>Home</Menu.Item>
+        <Menu.Item><NavLink to="/">Home</NavLink></Menu.Item>
         <Menu.Item><NavLink to="/gallery">Gallery</NavLink></Menu.Item>
         <Menu.Item><NavLink to="/activities">Activities</NavLink></Menu.Item>
         <Menu.Item as='a'>Volunteers</Menu.Item>
