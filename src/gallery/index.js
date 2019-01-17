@@ -3,6 +3,7 @@ import { Segment } from 'semantic-ui-react'
 import {galleryImages} from '../static/data/galleryImages'
 import CardImages from './cardImages'
 import AppHeaderDesktop from '../home-page/appHeaderDesktop'
+import './gallery.css'
 
 const GalleryComponent = () => {
   return (

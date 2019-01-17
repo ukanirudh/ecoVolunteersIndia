@@ -6,7 +6,9 @@ const CardImages = () => {
   const renderedImageCard = galleryImages.map((gImage) => {
     return (
       <Card key={gImage.imageUrl}>
-        <Image src={require(`../static/images/${gImage.imageUrl}`)} />
+        <div className='gallery-card-img-container'>
+          <Image style={{height: '100%'}} src={require(`../static/images/${gImage.imageUrl}`)} />
+        </div>
         <Card.Content>
           <Card.Header>Daniel</Card.Header>
           <Card.Meta>Joined in 2016</Card.Meta>
@@ -23,7 +25,7 @@ const CardImages = () => {
   })
 
   return (
-    <Card.Group>
+    <Card.Group itemsPerRow={4}>
       {renderedImageCard}
     </Card.Group>
   )
