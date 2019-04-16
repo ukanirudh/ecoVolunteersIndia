@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Checkbox, Form } from 'semantic-ui-react'
 
-class RegisterForActivity extends Component {
+class SingupForm extends Component {
   render () {
     return (
       <Form>
@@ -19,4 +19,4 @@ class RegisterForActivity extends Component {
   }
 }
 
-export default RegisterForActivity
+export default SingupForm

@@ -3,3 +3,23 @@
   background-repeat: no-repeat !important;
   background-position: center !important;
 } */
+
+.responsive-primary-container {
+  background-color: #659318 !important;
+}
+
+.default-header {
+  background-color: green !important;
+}
+
+.default-header .item a {
+  color: white !important;
+}
+
+.default-header.inverted  {
+  background-color: silver !important;
+}
+
+.default-header.inverted .item a {
+  color: black !important;
+}

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import AppHeaderDesktop from '../home-page/appHeaderDesktop'
 import RegisterForActivity from './registerForActivity'
 import { Image, List, Segment, Button, Icon } from 'semantic-ui-react'
+import CommonModal from '../components/commonModal'
 import {activitiesList} from '../static/data/activitiesList'
 import './activities.css'
 
@@ -11,7 +12,7 @@ const renderActivitiesList = (activities, showRegisterModal) => {
     return (
       <List.Item key={actId} className='activity-list-item'>
         <List.Content floated='right'>
-          <Button onClick={showRegisterModal}>Register</Button>
+          <CommonModal TriggerComp={<Button>Register</Button>} modalHeader={'Register'} ModalContent={RegisterForActivity} />
         </List.Content>
         <List.Content>
           <List.Header as='a'>{name}</List.Header>
@@ -49,7 +50,6 @@ class Activities extends Component {
     return (
       <Segment className='activity-component-container'>
         <AppHeaderDesktop fixed={false} customClassName={'others-appHeader'} />
-        <RegisterForActivity openRegisterModal={showModal} />
         <List className='activity-list-container'>
           {renderActivitiesList(activitiesList, this.showRegisterModal)}
         </List>

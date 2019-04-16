@@ -16,9 +16,6 @@ const AboutUsComponent = () => {
         <p>
           <b>Mail us to know more on how to participate in the various programs at <i>communications.evi@ecovolunteersindia.org</i></b>
         </p>
-        <p>
-          <b>Mail us to know more on how to participate in the various programs at <i>communications.evi@gmail.com</i></b>
-        </p>
       </Container>
     </Segment>
   )

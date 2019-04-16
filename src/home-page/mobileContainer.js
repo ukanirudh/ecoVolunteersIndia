@@ -9,6 +9,7 @@ import {
   Visibility,
   Icon
 } from 'semantic-ui-react'
+import { NavLink } from 'react-router-dom'
 import HomepageHeading from './homepageHeading'
 
 export default class MobileContainer extends Component {
@@ -35,13 +36,11 @@ export default class MobileContainer extends Component {
           <Menu.Item as='a' active>
             Home
           </Menu.Item>
-          <Menu.Item as='a'>Work</Menu.Item>
-          <Menu.Item as='a'>Gallery</Menu.Item>
-          <Menu.Item as='a'>Activities</Menu.Item>
+          <Menu.Item><NavLink to="/">Home</NavLink></Menu.Item>
+          <Menu.Item><NavLink to="/gallery">Gallery</NavLink></Menu.Item>
+          <Menu.Item><NavLink to="/activities">Activities</NavLink></Menu.Item>
           <Menu.Item as='a'>Volunteers</Menu.Item>
-          <Menu.Item as='a'>About Us</Menu.Item>
-          <Menu.Item as='a'>Log in</Menu.Item>
-          <Menu.Item as='a'>Sign Up</Menu.Item>
+          <Menu.Item><NavLink to="/aboutus">About Us</NavLink></Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
