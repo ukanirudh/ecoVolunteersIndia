@@ -1,3 +1,8 @@
 .gallery-card-img-container {
   height: 55%;
 }
+
+
+.gallery-container {
+  padding: 30px;
+}

@@ -4,28 +4,26 @@ import {galleryImages} from '../static/data/galleryImages'
 
 const CardImages = () => {
   const renderedImageCard = galleryImages.map((gImage) => {
+    const {imageUrl, activityName, activityDesc, activityDate, numParticipants} = gImage
     return (
-      <Card key={gImage.imageUrl}>
+      <Card key={imageUrl}>
         <div className='gallery-card-img-container'>
-          <Image style={{height: '100%'}} src={require(`../static/images/${gImage.imageUrl}`)} />
+          <Image style={{height: '100%', width: '100%'}} src={require(`../static/images/${imageUrl}`)} />
         </div>
         <Card.Content>
-          <Card.Header>Daniel</Card.Header>
-          <Card.Meta>Joined in 2016</Card.Meta>
-          <Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
+          <Card.Header>{activityName}</Card.Header>
+          <Card.Meta>{activityDate}</Card.Meta>
+          <Card.Description>{activityDesc}</Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <a>
-            <Icon name='user' />
-            10 Friends
-          </a>
+          <a> <Icon name='user' /> {numParticipants} Partcipants </a>
         </Card.Content>
       </Card>
     )
   })
 
   return (
-    <Card.Group itemsPerRow={4}>
+    <Card.Group className='gallery-container' itemsPerRow={3}>
       {renderedImageCard}
     </Card.Group>
   )

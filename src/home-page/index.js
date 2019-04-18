@@ -6,12 +6,12 @@ import {
   Grid,
   Header,
   Image,
-  List,
   Responsive,
   Segment
 } from 'semantic-ui-react'
 import MobileContainer from './mobileContainer'
 import DesktopContainer from './desktopContainer'
+import AppFooter from './AppFooter'
 
 const ResponsiveContainer = ({ children }) => (
   <div>
@@ -59,17 +59,17 @@ const HomepageLayout = (props) => (
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              "What a Company"
+              "Enthusiastic NGO"
             </Header>
             <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              "I shouldn't have gone with their competitor."
+              "Always ready to lend a helping hand."
             </Header>
             <p style={{ fontSize: '1.33em' }}>
               <Image avatar src='/images/avatar/large/nan.jpg' />
-              <b>Nan</b> Chief Fun Officer Acme Toys
+              <b>APCCF</b>
             </p>
           </Grid.Column>
         </Grid.Row>
@@ -109,35 +109,7 @@ const HomepageLayout = (props) => (
         </Button>
       </Container>
     </Segment>
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
-      <Container>
-        <Grid divided inverted stackable>
-          <Grid.Row>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='About' />
-              <List link inverted>
-                <List.Item as='a'>Call us: Nakul 9844772913 / Raju 9620114334</List.Item>
-                <List.Item as='a'>Email us: evitrust.official@gmail.com</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='Services' />
-              <List link inverted>
-                <List.Item as='a'>Convoy and traffic management at Bandipur</List.Item>
-                <List.Item as='a'>Anti snaring</List.Item>
-                <List.Item as='a'>Fire lining</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={7}>
-              <Header as='h4' inverted> Our Mission </Header>
-              <p>
-                Let us leave this earth in a better shape than before
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
+    <AppFooter />
   </ResponsiveContainer>
 )
 export default HomepageLayout
