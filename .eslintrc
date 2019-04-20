@@ -3,6 +3,9 @@
   "plugins": [
     "react"
   ],
+  "rules": {
+    "semi": [0, "never"],
+  },
   "extends": ["airbnb-base"]
   #"extends": ["eslint:recommended", "plugin:react/recommended"]
 }
