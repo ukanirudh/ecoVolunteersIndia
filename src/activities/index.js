@@ -1,58 +1,27 @@
 import React, {Component} from 'react'
 import AppHeaderDesktop from '../home-page/appHeaderDesktop'
-import RegisterForActivity from './registerForActivity'
-import { Image, List, Segment, Button, Icon } from 'semantic-ui-react'
-import CommonModal from '../components/commonModal'
+import SingleActivity from './SingleActivity'
+import { List, Segment, Grid } from 'semantic-ui-react'
 import {activitiesList} from '../static/data/activitiesList'
-import './activities.css'
+import './activities.scss'
 
 const renderActivitiesList = (activities, showRegisterModal) => {
-  const activitiesList = activities.map((activity) => {
-    const {activity_id: actId, activity_date: date, activity_name: name, number_of_paricipants_required: noOfParticipants} = activity
-    return (
-      <List.Item key={actId} className='activity-list-item'>
-        <List.Content floated='right'>
-          <CommonModal TriggerComp={<Button>Register</Button>} modalHeader={'Register'} ModalContent={RegisterForActivity} />
-        </List.Content>
-        <List.Content>
-          <List.Header as='a'>{name}</List.Header>
-          <List.Description>
-          <div>
-          <p>
-            <span><Icon name='calendar alternate outline' />{date}</span>
-            <span><Icon name='child' />{noOfParticipants}</span>
-          </p>
-          <p>
-            <span><b>Activity and Responsibilities: </b></span>
-            Crowd Management Support to Karnataka Forest Department , Bandipur Tiger Reserve.
-          </p>
-          </div>
-          </List.Description>
-        </List.Content>
-      </List.Item>
-    )
-  })
+  const activitiesList = activities.map((activity) => <SingleActivity activity={activity} />)
   return activitiesList
 }
 
 class Activities extends Component {
-
-  componentWillMount () {
-    this.setState({showModal: false})
-  }
-
-  showRegisterModal = () => {
-    this.setState({showModal: true})
-  }
-
   render () {
-    const {showModal} = this.state
     return (
       <Segment className='activity-component-container'>
         <AppHeaderDesktop fixed={false} customClassName={'others-appHeader'} />
-        <List className='activity-list-container'>
-          {renderActivitiesList(activitiesList, this.showRegisterModal)}
-        </List>
+        <Grid centered columns={8}>
+          <Grid.Row columns={16}>
+            <List divided relaxed className='activity-list-container'>
+              {renderActivitiesList(activitiesList, this.showRegisterModal)}
+            </List>
+          </Grid.Row>
+        </Grid>
       </Segment>
     )
   }

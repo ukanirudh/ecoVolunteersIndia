@@ -5,10 +5,10 @@ import reducer from './root-reducers'
 const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore)
 
 export default function setupStore (initialState) {
-  let store = createStoreWithMiddleware(
-      reducer,
-      initialState,
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  const store = createStoreWithMiddleware(
+    reducer,
+    initialState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
   return store
 }
