@@ -2,6 +2,7 @@ const path = require("path");
 const fs  = require('fs');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const lessToJs = require('less-vars-to-js');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: "./src/index.js",
@@ -19,10 +20,7 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: ['es2015', 'stage-0', 'react'],
-              plugins: [
-                'transform-runtime',
-                ['import', { libraryName: "antd", style: true }]
-              ]
+              plugins: [ 'transform-runtime' ]
             }
           },
           {
@@ -53,9 +51,24 @@ module.exports = {
             }
         }]
       },
+      // {
+      //   test: /\.css$/,
+      //   use: ["style-loader", "css-loader"]
+      // },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // only enable hot in development
+              hmr: process.env.NODE_ENV === 'development',
+              // if hmr does not work, this is a forceful method.
+              reloadAll: true,
+            },
+          },
+          'css-loader',
+        ],
       },
       {
         test: /\.scss$/,
@@ -76,6 +89,12 @@ module.exports = {
     ]
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     })
