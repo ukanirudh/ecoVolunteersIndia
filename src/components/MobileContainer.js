@@ -9,10 +9,10 @@ import {
   Icon
 } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
-import HomepageHeading from './homepageHeading'
-import CommonModal from '../components/commonModal'
-import LoginForm from '../components/LoginForm'
-import SignupForm from '../components/SignupForm'
+import HomepageHeading from '../home-page/homepageHeading'
+import CommonModal from './commonModal'
+import LoginForm from './LoginForm'
+import SignupForm from './SignupForm'
 
 function loginButton () {
   return (
@@ -34,7 +34,7 @@ export default class MobileContainer extends Component {
   handleToggle = () => this.setState({ sidebarOpened: true })
 
   render() {
-    const { children } = this.props
+    const { children, shouldShowHeading = false } = this.props
     const { sidebarOpened } = this.state
 
     return (
@@ -72,7 +72,7 @@ export default class MobileContainer extends Component {
                 </Menu.Item>
               </Menu>
             </Container>
-            <HomepageHeading mobile />
+            {shouldShowHeading && <HomepageHeading mobile />}
           </Segment>
 
           {children}

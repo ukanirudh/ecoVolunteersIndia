@@ -23,3 +23,8 @@
 .default-header.inverted .item a {
   color: black !important;
 }
+
+.homepage-heading-wrapper {
+  min-height: 700px;
+  padding: 1em 0em;
+}

@@ -5,7 +5,6 @@ class CommonModal extends Component {
 
   render () {
     const {TriggerComp, modalHeader, ModalContent, size='tiny'} = this.props
-    console.log(TriggerComp)
     return (
       <Modal
         trigger={TriggerComp}
