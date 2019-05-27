@@ -1,7 +1,6 @@
 const path = require("path");
 const fs  = require('fs');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const lessToJs = require('less-vars-to-js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -19,8 +18,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['es2015', 'stage-0', 'react'],
-              plugins: [ 'transform-runtime' ]
+              plugins: [ '@babel/plugin-transform-runtime' ]
             }
           },
           {
