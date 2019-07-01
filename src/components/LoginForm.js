@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { tryUserLogin } from '../store/modules/loginModule'
 
 class LoginForm extends Component {
   render () {
@@ -16,10 +19,25 @@ class LoginForm extends Component {
         <Form.Field>
           <Checkbox label='I agree to the Terms and Conditions' />
         </Form.Field>
-        <Button type='submit'>Submit</Button>
+        <Button type='submit' onClick={this.props.actions.tryUserLogin}>Submit</Button>
       </Form>
     )
   }
 }
 
-export default LoginForm
+
+const mapDispatchToProps = dispatch => {
+  const actions = bindActionCreators(Object.assign({}, {
+    tryUserLogin
+  }), dispatch)
+  return {actions, dispatch}
+}
+
+function mapStateToProps (state) {
+  const { loginModule} = state
+  return {
+    loginModule
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)

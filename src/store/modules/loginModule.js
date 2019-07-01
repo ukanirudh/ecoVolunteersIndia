@@ -8,11 +8,28 @@ export function userLoginSuccess (payload) {
   return {type: USER_LOGIN, payload}
 }
 
-export function tryUserLogin () {
+export function tryUserSignup () {
   return (dispatch, getState) => {
     return fetch('http://localhost:8081/signup', {
       method: 'POST',
       body: JSON.stringify({email: 'test@test.com', password: 'password'})
+    }).then(response => response.json())
+    .then((response) => {
+      console.log(response)
+      dispatch(userLoginSuccess(selectedRoom))
+    })
+  }
+}
+
+export function tryUserLogin () {
+  return (dispatch, getState) => {
+    return fetch('http://localhost:8081/login', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({username: 'kushagra.urs@gmail.com', password: 'password'})
     }).then(response => response.json())
     .then((response) => {
       console.log(response)
