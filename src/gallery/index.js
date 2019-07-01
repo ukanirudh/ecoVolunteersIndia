@@ -1,29 +1,14 @@
-import React from 'react'
-import { Segment } from 'semantic-ui-react'
-import {galleryImages} from '../static/data/galleryImages'
-import CardImages from './cardImages'
-import AppHeaderDesktop from '../home-page/appHeaderDesktop'
-import MobileContainer from '../components/MobileContainer'
-import DesktopContainer from '../components/DesktopContainer'
-import './gallery.css'
+import React, {Suspense} from 'react'
 
-
-const ResponsiveContainer = ({ children }) => (
-  <React.Fragment>
-    <DesktopContainer>{children}</DesktopContainer>
-    <MobileContainer>{children}</MobileContainer>
-  </React.Fragment>
-)
-
-const GalleryComponent = () => {
+const LazyGalleryComponent = React.lazy(() => import('./galleryContainer'));
+const AsyncGalleryComponent = () => {
   return (
-    <ResponsiveContainer>
-      <Segment>
-        {/*<AppHeaderDesktop fixed={false} customClassName={'others-appHeader'} />*/}
-        <CardImages />
-      </Segment>
-    </ResponsiveContainer>
+    <React.Fragment>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyGalleryComponent />
+      </Suspense>
+    </React.Fragment>
   )
 }
 
-export default GalleryComponent
+export default AsyncGalleryComponent
