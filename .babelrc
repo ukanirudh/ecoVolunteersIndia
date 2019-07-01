@@ -3,6 +3,7 @@
   "plugins": [
     "@babel/plugin-transform-destructuring",
     "@babel/plugin-proposal-object-rest-spread",
+    "syntax-dynamic-import",
     [
       "@babel/plugin-proposal-class-properties",
       {
