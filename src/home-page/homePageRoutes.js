@@ -5,6 +5,7 @@ import Gallery from '../gallery'
 import Activities from '../activities'
 import AboutUs from '../about-us'
 import Volunteers from '../volunteers'
+import CreateEvent from '../activities/CreateEvent'
 
 const HomePageRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const HomePageRoutes = () => {
       <Route path="/aboutus" component={AboutUs} />
       <Route path="/volunteers" component={Volunteers} />
       <Route path="/activities" component={Activities} />
+      <Route path="/createEvent" component={CreateEvent} />
     </Switch>
   )
 }

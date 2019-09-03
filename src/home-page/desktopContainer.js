@@ -32,7 +32,7 @@ export default class DesktopContainer extends Component {
             className='responsive-primary-container'
             inverted
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{ minHeight: 700, padding: '0em 0em' }}
             vertical
           >
             <AppHeaderDesktop fixed={fixed} />

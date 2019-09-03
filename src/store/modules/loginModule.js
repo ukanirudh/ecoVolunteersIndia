@@ -21,15 +21,16 @@ export function tryUserSignup () {
   }
 }
 
-export function tryUserLogin () {
+export function tryUserLogin ({username, password}) {
   return (dispatch, getState) => {
+    //JSON.stringify({username: 'kushagra.urs@gmail.com', password: 'demoPass'})
     return fetch('http://localhost:8081/login', {
       method: 'POST',
       mode: 'cors',
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify({username: 'kushagra.urs@gmail.com', password: 'password'})
+      body: JSON.stringify({username, password})
     }).then(response => response.json())
     .then((response) => {
       console.log(response)
