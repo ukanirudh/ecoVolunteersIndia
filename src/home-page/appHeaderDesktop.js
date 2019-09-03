@@ -1,19 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Button, Container, Menu } from 'semantic-ui-react'
 import CommonModal from '../components/commonModal'
 import LoginForm from '../components/LoginForm'
-import SignupForm from '../components/SignupForm'
 
 function loginButton (fixed) {
   return (
     <Button as='a' inverted={!fixed}> Log in </Button>
-  )
-}
-
-function signupButton (fixed) {
-  return (
-    <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}> Sign Up </Button>
   )
 }
 
@@ -35,8 +28,7 @@ const AppHeaderDesktop = (props) => {
         <Menu.Item><NavLink to="/volunteers">Volunteers</NavLink></Menu.Item>
         <Menu.Item><NavLink to="/aboutus">About Us</NavLink></Menu.Item>
         <Menu.Item position='right'>
-          <CommonModal TriggerComp={loginButton(fixed)} modalHeader={'Login up'} ModalContent={LoginForm} />
-          <CommonModal TriggerComp={signupButton(fixed)} modalHeader={'Sign up'} ModalContent={SignupForm} />
+          <CommonModal TriggerComp={loginButton(fixed)} modalHeader={'Login'} ModalContent={LoginForm} />
         </Menu.Item>
       </Container>
     </Menu>

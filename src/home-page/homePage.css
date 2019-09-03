@@ -5,11 +5,14 @@
 } */
 
 .responsive-primary-container {
-  background-color: #659318 !important;
+  background: #52c234 !important;
+  background: -webkit-linear-gradient(to top, #061700, #52c234) !important;
+  background: linear-gradient(to bottom, #061700, #52c234) !important;
 }
 
 .default-header {
-  background-color: green !important;
+  border-radius: 5px !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
 }
 
 .default-header .item a {

@@ -5,21 +5,22 @@ import { bindActionCreators } from 'redux'
 import { tryUserLogin } from '../store/modules/loginModule'
 
 class LoginForm extends Component {
+  state = {}
+
+  onTryLogin = () => {
+    this.props.actions.tryUserLogin(this.state)
+  }
+
+  setFormFeilds = (e, {name, value}) => {
+    this.setState({[name]: value})
+  }
+
   render () {
     return (
       <Form>
-        <Form.Field>
-          <label>First Name</label>
-          <input placeholder='First Name' />
-        </Form.Field>
-        <Form.Field>
-          <label>Last Name</label>
-          <input placeholder='Last Name' />
-        </Form.Field>
-        <Form.Field>
-          <Checkbox label='I agree to the Terms and Conditions' />
-        </Form.Field>
-        <Button type='submit' onClick={this.props.actions.tryUserLogin}>Submit</Button>
+        <Form.Input fluid label='Email' name='username' onChange={this.setFormFeilds} placeholder='Email' />
+        <Form.Input fluid label='Password' type='password' name='password' onChange={this.setFormFeilds} placeholder='Password' />
+        <Button type='submit' onClick={this.onTryLogin}>Submit</Button>
       </Form>
     )
   }

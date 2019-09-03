@@ -38,7 +38,7 @@ export default class DesktopContainer extends Component {
             className={''}
             inverted
             textAlign='center'
-            style={ shouldShowHeading ? { minHeight: 700, padding: '1em 0em' } : {}}
+            style={ shouldShowHeading ? { minHeight: 700, padding: '0em 0em' } : {padding: '0em 0em'}}
             vertical
           >
             <AppHeaderDesktop fixed={fixed} />
