@@ -7,8 +7,9 @@ import {
   Segment,
   Visibility,
 } from 'semantic-ui-react'
-import AppHeaderDesktop from '../home-page/appHeaderDesktop'
+import AppHeaderDesktop from './appHeaderDesktop'
 import HomepageHeading from '../home-page/homepageHeading'
+import Footer from './AppFooter'
 import '../home-page/homePage.css'
 
 export default class DesktopContainer extends Component {
@@ -26,7 +27,7 @@ export default class DesktopContainer extends Component {
   render() {
     const { children, shouldShowHeading = false } = this.props
     const { fixed } = this.state
-    console.log(this.headerClass)
+    
     return (
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
         <Visibility
@@ -47,6 +48,7 @@ export default class DesktopContainer extends Component {
         </Visibility>
 
         {children}
+        <Footer />
       </Responsive>
     )
   }

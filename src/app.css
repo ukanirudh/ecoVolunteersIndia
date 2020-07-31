@@ -1,3 +1,7 @@
 .others-appHeader {
   background-color: black !important;
 }
+
+.gallery-card-img-container {
+  height: 320px;
+}

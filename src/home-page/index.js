@@ -1,24 +1,12 @@
 import React from 'react'
 import {
   Button,
-  Container,
-  Divider,
   Grid,
   Header,
   Image,
-  Responsive,
   Segment
 } from 'semantic-ui-react'
-import MobileContainer from './mobileContainer'
-import DesktopContainer from './desktopContainer'
-import AppFooter from './AppFooter'
-
-const ResponsiveContainer = ({ children }) => (
-  <div>
-    <DesktopContainer>{children}</DesktopContainer>
-    <MobileContainer>{children}</MobileContainer>
-  </div>
-)
+import ResponsiveContainer from '../components/ResponsiveContainer'
 
 const goToAboutUs = ({history}) => {
   return history && history.push('/aboutus')
@@ -106,7 +94,6 @@ const HomepageLayout = (props) => (
         </Grid.Row>
       </Grid>
     </Segment>
-    <AppFooter />
   </ResponsiveContainer>
 )
 export default HomepageLayout

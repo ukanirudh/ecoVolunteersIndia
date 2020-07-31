@@ -4,7 +4,7 @@ import { List, Segment, Button, Icon } from 'semantic-ui-react'
 import CommonModal from '../components/commonModal'
 
 const SingleActivity = (props) => {
-  const {activity} = props
+  const {activity, eventRegisterDispatch} = props
   const {
     activity_id: actId,
     activity_date: date,
@@ -16,7 +16,7 @@ const SingleActivity = (props) => {
   return (
     <List.Item key={actId} className='activity-list-item'>
       <List.Content floated='right'>
-        <CommonModal TriggerComp={<Button>Register</Button>} modalHeader={'Register'} ModalContent={RegisterForActivity} />
+        <CommonModal eventRegisterDispatch={eventRegisterDispatch} TriggerComp={<Button>Register</Button>} modalHeader={'Register'} ModalContent={RegisterForActivity} />
       </List.Content>
       <List.Content style={{textAlign: 'initial'}}>
         <List.Header as='a'>{name}</List.Header>
