@@ -1,13 +1,11 @@
 import React, {Suspense} from 'react'
+import ActivitiesContainer from './activitiesContainer'
 import './activities.scss'
 
-const LazyActivitiesComponent = React.lazy(() => import('./activitiesContainer'));
 const AsyncActivitiesComponent = () => {
   return (
     <React.Fragment>
-      <Suspense fallback={<div>Loading...</div>}>
-        <LazyActivitiesComponent />
-      </Suspense>
+      <ActivitiesContainer />
     </React.Fragment>
   )
 }

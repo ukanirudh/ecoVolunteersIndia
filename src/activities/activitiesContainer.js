@@ -14,7 +14,7 @@ const renderActivitiesList = (activities, showRegisterModal, props) => {
 
 class ActivitiesContainer extends Component {
   render () {
-    this.props.actions.eventRegisterDispatch({})
+    //this.props.actions.eventRegisterDispatch({})
     return (
       <Segment className='activity-component-container'>
         <ResponsiveContainer>
