@@ -74,21 +74,25 @@ const HomepageLayout = (props) => (
           <Grid.Column>
             <Segment style={{ padding: '8em 0em' }} vertical>
               <Header as='h3' style={{ fontSize: '2em' }}>
-                Breaking The Grid, Grabs Your Attention
+                Be the change, respect wildlife and adopt sustainable lifestyle 
               </Header>
               <p style={{ fontSize: '1.33em' }}>
-                Instead of focusing on content creation and hard work, we have learned how to master the
-                art of doing nothing by providing massive amounts of whitespace and generic content that
-                can seem massive, monolithic and worth your attention.
+                We respect the habitats of wildlife species and to conserve them, 
+                by working closely with all the stakeholders, forest department and the
+                residents and moving towards sustainable development, for betterment of 
+                both wildlife and the people.
               </p>
               <Button as='a' size='large'> Read More </Button>
               <Header as='h3' style={{ fontSize: '2em' }}>
-                Did We Tell You About Our Bananas?
+                Did We Tell You About Our programs?
               </Header>
               <p style={{ fontSize: '1.33em' }}>
-                Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-                it's really true. It took years of gene splicing and combinatory DNA research, but our
-                bananas can really dance.
+                We have been working on wildlife cosnervation for over 5 years now, starting 
+                from 2016. We have helped forest department of karnataka to establish solar pumps in 
+                the conserved areas, to quench the thirst of animals during summers. We have 
+                been regularly conducting awarness sessions, educating the youths and providing
+                a helping hand in form of volunteers to the department. We have also 
+                conducted bird surveys at Nagarhole and Bandipur areas.
               </p>
               <Button as='a' size='large'> I'm Still Quite Interested </Button>
             </Segment>

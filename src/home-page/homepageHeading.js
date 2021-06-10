@@ -5,26 +5,16 @@ import './homePage.css'
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
-    <Image src={Evi2} size='medium' centered />
+    <Image src={Evi2} size='small' centered />
     <Header
       as='h1'
       content='Eco Volunteers India'
       inverted
-      style={{
-        fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'normal',
-        marginBottom: 0
-      }}
     />
     <Header
-      as='h2'
+      as='h3'
       content='Wildlife conservation || Animal Rescue || Intelligence || Forest Patrolling || Awareness || Nature camps || Crowd management || Anti snare and Anti poaching activity || Traffic management.'
       inverted
-      style={{
-        fontSize: mobile ? '1.5em' : '1.7em',
-        fontWeight: 'normal',
-        marginTop: mobile ? '0.5em' : '1.5em',
-      }}
     />
     {/*<Button primary size='huge'>
       Get Started

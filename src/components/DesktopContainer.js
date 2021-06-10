@@ -16,7 +16,6 @@ export default class DesktopContainer extends Component {
 
   constructor (props) {
     super(props)
-    const {shouldShowHeading} = props
     this.headerClass=`responsive-primary-container`
   }
 
@@ -38,7 +37,7 @@ export default class DesktopContainer extends Component {
             className={''}
             inverted
             textAlign='center'
-            style={ shouldShowHeading ? { minHeight: 700, padding: '0em 0em' } : {padding: '0em 0em'}}
+            style={ shouldShowHeading ? { height: 400, padding: '0em 0em' } : {padding: '0em 0em'}}
             vertical
           >
             <AppHeaderDesktop fixed={fixed} />

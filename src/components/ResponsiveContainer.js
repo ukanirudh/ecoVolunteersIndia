@@ -19,7 +19,7 @@ const { Media, MediaContextProvider } = AppMedia;
 const ResponsiveContainer = ({ children }) => (
     <MediaContextProvider>
         <Media greaterThanOrEqual="tablet">
-            <DesktopContainer>{children}</DesktopContainer>
+            <DesktopContainer shouldShowHeading={true}>{children}</DesktopContainer>
         </Media>
         <Media at="mobile">
             <MobileContainer>{children}</MobileContainer>
