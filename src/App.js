@@ -1,16 +1,16 @@
 import React from 'react'
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from 'react-redux'
-import App from './home-page/homePageRoutes'
+import PageRoutes from './homePageRoutes'
 import setupStore from './store'
 
 const ApplicationWrapper = () => {
   return (
-    <HashRouter>
-      <Provider store={setupStore()}>
-        <App />
+    <Router>
+      <Provider store={setupStore}>
+        <PageRoutes />
       </Provider>
-    </HashRouter>
+    </Router>
   )
 }
 

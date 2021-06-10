@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import {
   Button,
   Container,
-  Responsive,
   Segment,
   Visibility,
 } from 'semantic-ui-react'
@@ -29,7 +28,7 @@ export default class DesktopContainer extends Component {
     const { fixed } = this.state
     
     return (
-      <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+      <>
         <Visibility
           once={false}
           onBottomPassed={this.showFixedMenu}
@@ -49,7 +48,7 @@ export default class DesktopContainer extends Component {
 
         {children}
         <Footer />
-      </Responsive>
+      </>
     )
   }
 }

@@ -1,74 +1,49 @@
-import React, {Component} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Image, List, Segment } from 'semantic-ui-react'
 import ResponsiveContainer from '../components/ResponsiveContainer'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { getVolunteers } from '../store/modules/volunteersModules'
+import Helen from '../static/images/helen.jpg';
 
-class VolunteersList extends Component {
-  state = {volunteersList: []}
+const VolunteersList = () => {
+  const [volunteersList, setVolunteersList] = useState([]);
+  const volunteersModules = useSelector((state) => state.volunteersModules);
+  const dispatch = useDispatch()
 
-  componentDidMount () {
-    this.props.actions.getVolunteers()
-  }
+  useEffect(() => {
+    dispatch(getVolunteers())
+  }, [])
 
-  static getDerivedStateFromProps(props, state) {
-    //console.log(props, state)
-    if (props.volunteers.length !== state.volunteersList.length) {
-      return {
-        volunteersList: props.volunteers,
-      };
-    }
-    return null;
-  }
+  useEffect(() => {
+    setVolunteersList(volunteersModules.volunteers)
+  }, [volunteersModules.volunteers])
 
-  componentDidUpdate(prevProps, prevState) {}
-
-  render () {
-    console.log(this.state)
-    const {volunteersList} = this.state
-    return (
+  return (
+    <ResponsiveContainer>
       <Segment className='activity-component-container'>
-        <ResponsiveContainer>
-        {/* <AppHeaderDesktop fixed={false} customClassName={'others-appHeader'} /> */}
-          <List celled>
-          {
-            volunteersList.map((volunteer, index) => {
-              const {volunteerName, email, phoneNumber, occupation, bio} = volunteer
-              return (
-                <List.Item key={`${volunteerName}-${index}`}>
-                  <Image avatar src={require(`../static/images/helen.jpg`)} />
-                  <List.Content verticalAlign='middle'>
-                    <List.Header>{volunteerName}</List.Header>
-                      <List.Description>
-                        {email && <p>{email}</p>}
-                        {bio && <p>{bio}.</p>}
-                        {phoneNumber && <p>{phoneNumber}</p>}
-                      </List.Description>
-                  </List.Content>
-                </List.Item>
-              )
-            })
-          }
-          </List>
-        </ResponsiveContainer>
+        <List celled>
+        {
+          volunteersList.map((volunteer, index) => {
+            const {volunteerName, email, phoneNumber, occupation, bio} = volunteer
+            return (
+              <List.Item key={`${volunteerName}-${index}`}>
+                <Image avatar src={Helen} />
+                <List.Content verticalAlign='middle'>
+                  <List.Header>{volunteerName}</List.Header>
+                    <List.Description>
+                      {email && <p>{email}</p>}
+                      {bio && <p>{bio}.</p>}
+                      {phoneNumber && <p>{phoneNumber}</p>}
+                    </List.Description>
+                </List.Content>
+              </List.Item>
+            )
+          })
+        }
+        </List>
       </Segment>
-    )
-  }
+    </ResponsiveContainer>
+  )
 }
 
-const mapDispatchToProps = dispatch => {
-  const actions = bindActionCreators(Object.assign({}, {
-    getVolunteers
-  }), dispatch)
-  return {actions, dispatch}
-}
-
-function mapStateToProps (state) {
-  const { volunteersModules: {volunteers} } = state
-  return {
-    volunteers
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(VolunteersList)
+export default VolunteersList;

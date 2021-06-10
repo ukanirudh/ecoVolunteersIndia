@@ -5,7 +5,7 @@ import ResponsiveContainer from '../components/ResponsiveContainer'
 
 const GalleryComponent = () => (
   <ResponsiveContainer>
-    <Segment>
+    <Segment className='gallery-container'>
       <CardImages />
     </Segment>
   </ResponsiveContainer>

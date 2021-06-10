@@ -7,6 +7,8 @@ import {
   Segment
 } from 'semantic-ui-react'
 import ResponsiveContainer from '../components/ResponsiveContainer'
+import HomePageImg from '../static/images/homepageimg.jpg';
+import CoverImg from '../static/images/coverimage_1.jpg';
 
 const goToAboutUs = ({history}) => {
   return history && history.push('/aboutus')
@@ -32,7 +34,7 @@ const HomepageLayout = (props) => (
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-            <Image bordered rounded size='large' src={require('../static/images/homepageimg.jpg')} />
+            <Image bordered rounded size='large' src={HomePageImg} />
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
@@ -67,7 +69,7 @@ const HomepageLayout = (props) => (
       <Grid columns={2} stackable textAlign='center'>
         <Grid.Row verticalAlign='middle'>
           <Grid.Column>
-            <Image bordered rounded size='large' src={require('../static/images/coverimage_1.jpg')} />
+            <Image bordered rounded size='large' src={CoverImg} />
           </Grid.Column>
           <Grid.Column>
             <Segment style={{ padding: '8em 0em' }} vertical>

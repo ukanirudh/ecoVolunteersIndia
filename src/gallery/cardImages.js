@@ -8,7 +8,7 @@ const CardImages = () => {
     return (
       <Card key={imageUrl}>
         <div className='gallery-card-img-container'>
-          <Image style={{height: '100%', width: '100%'}} src={require(`../static/images/${imageUrl}`)} />
+          <Image style={{height: '100%', width: '100%'}} src={require(`../static/images/${imageUrl}`).default} />
         </div>
         <Card.Content>
           <Card.Header>{activityName}</Card.Header>

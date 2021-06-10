@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {
   Container,
   Menu,
-  Responsive,
   Segment,
   Sidebar,
   Button,
@@ -24,7 +23,7 @@ export default class MobileContainer extends Component {
     const { sidebarOpened } = this.state
 
     return (
-      <Responsive as={Sidebar.Pushable} maxWidth={Responsive.onlyMobile.maxWidth}>
+      <Segment as={Sidebar.Pushable}>
         <Sidebar
           as={Menu}
           animation='push'
@@ -60,7 +59,7 @@ export default class MobileContainer extends Component {
           {children}
           <Footer />
         </Sidebar.Pusher>
-      </Responsive>
+      </Segment>
     )
   }
 }

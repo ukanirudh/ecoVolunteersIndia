@@ -1,10 +1,11 @@
 import React from 'react'
 import { Image, Container, Header } from 'semantic-ui-react'
+import Evi2 from '../static/images/evi_2.png'
 import './homePage.css'
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
-    <Image src={require(`../static/images/evi_2.png`)} size='medium' centered />
+    <Image src={Evi2} size='medium' centered />
     <Header
       as='h1'
       content='Eco Volunteers India'
