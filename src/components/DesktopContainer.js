@@ -1,8 +1,5 @@
-import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState } from 'react'
 import {
-  Button,
-  Container,
   Segment,
   Visibility,
 } from 'semantic-ui-react'
@@ -11,43 +8,35 @@ import HomepageHeading from '../home-page/homepageHeading'
 import Footer from './AppFooter'
 import '../home-page/homePage.css'
 
-export default class DesktopContainer extends Component {
-  state = {}
+const DesktopContainer = (props) => {
+  const { children, shouldShowHeading = false } = props;
+  const [fixed, setFixed] = useState(false);
 
-  constructor (props) {
-    super(props)
-    this.headerClass=`responsive-primary-container`
-  }
+  const hideFixedMenu = () => setFixed(false);
+  const showFixedMenu = () => setFixed(true);
 
-  hideFixedMenu = () => this.setState({ fixed: false })
-  showFixedMenu = () => this.setState({ fixed: true })
-
-  render() {
-    const { children, shouldShowHeading = false } = this.props
-    const { fixed } = this.state
-    
-    return (
-      <>
-        <Visibility
-          once={false}
-          onBottomPassed={this.showFixedMenu}
-          onBottomPassedReverse={this.hideFixedMenu}
+  return (
+    <>
+      <Visibility
+        once={false}
+        onBottomPassed={showFixedMenu}
+        onBottomPassedReverse={hideFixedMenu}
+      >
+        <Segment
+          inverted
+          textAlign='center'
+          style={ shouldShowHeading ? { height: 400, padding: '0em 0em' } : {padding: '0em 0em'}}
+          vertical
         >
-          <Segment
-            className={''}
-            inverted
-            textAlign='center'
-            style={ shouldShowHeading ? { height: 400, padding: '0em 0em' } : {padding: '0em 0em'}}
-            vertical
-          >
-            <AppHeaderDesktop fixed={fixed} />
-            {shouldShowHeading && <HomepageHeading />}
-          </Segment>
-        </Visibility>
+          <AppHeaderDesktop fixed={fixed} />
+          {shouldShowHeading && <HomepageHeading />}
+        </Segment>
+      </Visibility>
 
-        {children}
-        <Footer />
-      </>
-    )
-  }
+      {children}
+      <Footer />
+    </>
+  )
 }
+
+export default DesktopContainer;

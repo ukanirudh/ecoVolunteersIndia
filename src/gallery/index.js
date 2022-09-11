@@ -5,9 +5,9 @@ import './gallery.scss'
 
 const AsyncGalleryComponent = () => {
   return (
-    <React.Fragment>
+    <>
         <GalleryContainer />
-    </React.Fragment>
+    </>
   )
 }
 

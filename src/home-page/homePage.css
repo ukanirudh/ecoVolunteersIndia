@@ -1,15 +1,3 @@
-/* .responsive-primary-container {
-  background-image: url("../static/images/evi.png") !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-} */
-
-.responsive-primary-container {
-  background: #52c234 !important;
-  background: -webkit-linear-gradient(to top, #061700, #52c234) !important;
-  background: linear-gradient(to bottom, #061700, #52c234) !important;
-}
-
 .default-header {
   border-radius: 5px !important;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
